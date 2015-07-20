@@ -1,0 +1,55 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context="com.adrenergic.tremorsense.RecordAccelData"
+    android:id="@+id/RecordAccelDataLayout"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="283dp"
+        android:layout_height="418dp"
+        android:layout_gravity="left|bottom"
+        android:src="@mipmap/bg_thand"
+        android:alpha="0.1"
+        android:adjustViewBounds="false"
+        android:longClickable="false" />
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_activity_record_accel_data"
+            android:textSize="@dimen/abc_text_size_headline_material"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.adrenergic.tremorsense.circleGraph
+                android:id="@+id/progressgraph"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recording"
+                android:id="@+id/accelText"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:phoneNumber="false"
+                android:textSize="@dimen/abc_text_size_large_material"
+                android:textIsSelectable="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -6,9 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.HashMap;
 
-/**
- * Created by Jackson on 20/07/2015.
- */
 public class DBHelper extends SQLiteOpenHelper {
     //Must increment version if schema is changed
     public static int DATABASE_VERSION = 1;
@@ -16,15 +13,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DATA_TABLE_NAME = "tremordata";
     public static final String DATA_COLUMN_DATE = "date";
     public static final String DATA_COLUMN_TIME = "time";
-    public static final String DATA_COLUMN_MOOD = "mood";
-    public static final String DATA_COLUMN_HUNGER = "hunger";
-    public static final String DATA_COLUMN_CAFFEINE = "caffeine";
     public static final String DATA_COLUMN_NOTE = "note";
     public static final String DATA_COLUMN_RESTING = "resting";
     public static final String DATA_COLUMN_POSTURE = "posture";
     private static final String TEXT_TYPE = " TEXT";
     private static final String COMMA = ",";
-    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE " + DATA_TABLE_NAME + " (" + DATA_COLUMN_DATE + " DATE," + DATA_COLUMN_TIME + " TIME," + DATA_COLUMN_MOOD + TEXT_TYPE + COMMA + DATA_COLUMN_HUNGER + TEXT_TYPE + COMMA + DATA_COLUMN_CAFFEINE + TEXT_TYPE + COMMA + DATA_COLUMN_NOTE + TEXT_TYPE + COMMA + DATA_COLUMN_RESTING + TEXT_TYPE + COMMA + DATA_COLUMN_POSTURE + TEXT_TYPE + COMMA + " )";
+    private static final String SQL_CREATE_ENTRIES = "CREATE TABLE IF NOT EXISTS " + DATA_TABLE_NAME + " (" + DATA_COLUMN_DATE + " DATE," + DATA_COLUMN_TIME + " TIME," + DATA_COLUMN_NOTE + TEXT_TYPE + COMMA + DATA_COLUMN_RESTING + TEXT_TYPE + COMMA + DATA_COLUMN_POSTURE + TEXT_TYPE + " )";
     private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + DATA_TABLE_NAME;
 
     public DBHelper(Context context){

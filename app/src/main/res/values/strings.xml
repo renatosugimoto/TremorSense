@@ -26,13 +26,7 @@
     <string name="title_activity_info">About Tremor</string>
 
     <!-- Full Recording Setup -->
-    <string name="mood">Overall Mood:</string>
-    <string name="mood_full">Great</string>
-    <string name="mood_empty">Awful</string>
-    <string name="hunger">Hunger:</string>
-    <string name="hunger_full">Full</string>
-    <string name="hunger_empty">Starving</string>
-    <string name="caffeine_query">Have you had caffeine today?</string>
+    <string name="fullrec_intro">This screen allows you to perform a full tremor test, using both left and right hands and in three different positions: \n &#8226; The device on top of your hand, extend in front of you (postural and intention tremor). \n &#8226; The device on top of your hand, resting on your lap (resting tremor). \n &#8226; Holding the device by your side. \n The app will tell you which position to use as you progress through the test. It should take about 3 minutes to complete. You may want to take a note describing whether you're hungry, tired, have had caffeine, or are anxious.</string>
     <string name="add_note">Notes:</string>
     <string name="go">Go!</string>
 

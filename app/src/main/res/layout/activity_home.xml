@@ -220,7 +220,6 @@
                 android:text="@string/title_activity_settings"
                 android:layout_gravity="center"/>
         </LinearLayout>
-    </LinearLayout>
-
+        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

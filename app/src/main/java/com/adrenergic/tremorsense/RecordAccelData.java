@@ -1,6 +1,7 @@
 package com.adrenergic.tremorsense;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.SensorEvent;
 import android.hardware.Sensor;
 import android.hardware.SensorEventListener;
@@ -8,6 +9,7 @@ import android.hardware.SensorManager;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class RecordAccelData extends Activity implements SensorEventListener {
     long time = System.currentTimeMillis();
     long[] timeArray = new long[1000];
     double[] recArray = new double[1000];
+    double[] dXArray = new double[1000];
     int recCount = 0;
     circleGraph progressCircle;
     int bmpWidth = 480;
@@ -30,9 +33,13 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         //Activity and layout initialisation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_accel_data);
+        //Check timer length
+        int timerLength = 3000;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        timerLength = Integer.parseInt(prefs.getString("record_countdown_length", "3000"));
         //Circle graph initiation
         progressCircle = (circleGraph) findViewById(R.id.progressgraph);
-        new CountDownTimer(3000, 100) {
+        new CountDownTimer(timerLength, 100) {
             public void onTick(long millisUntilFinished){
                 final TextView accZText = (TextView) findViewById(R.id.accelText);
                 accZText.setText(Integer.toString((int) Math.ceil(millisUntilFinished/1000)+1));
@@ -90,7 +97,6 @@ public class RecordAccelData extends Activity implements SensorEventListener {
                 recCount += 1;
             }
         } else {
-            Log.d("count", "data collection complete");
             regressionCalc();
             senSensorManager.unregisterListener(this);
         }
@@ -110,8 +116,6 @@ public class RecordAccelData extends Activity implements SensorEventListener {
             sumZ = sumZ + recArray[r];
         }
         meanZ = sumZ/recArray.length;
-        Log.d("arrays", "sum = " + Double.toString(sumZ));
-        Log.d("arrays", "mean = " + Double.toString(meanZ));
 
         //Calculating standard deviation
         double sumXu2; //this represents E((x-xbar)^2)
@@ -124,6 +128,22 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         final TextView accZText = (TextView) findViewById(R.id.accelText);
         accZText.setText(Math.round(SD*10) + "");
         accZText.setTextSize(80);
+
+        /* ALTERNATE CALCULATION
+        double[] dXArray = new double[999];
+        double lastVal = recArray[0];
+        double sumdX = 0;
+        for(int r=1;r<recArray.length;r++){
+            dXArray[r-1]=Math.abs(lastVal-recArray[r]);
+            lastVal = recArray[r];
+            sumdX += dXArray[r-1];
+        }
+        double tremorVal = sumdX/dXArray.length;
+        final TextView accZText = (TextView) findViewById(R.id.accelText);
+        accZText.setText(Math.round(sumdX) + "");
+        accZText.setTextSize(80);
+        Log.d("tremor",Double.toString(tremorVal));
+        */
     }
 
     @Override

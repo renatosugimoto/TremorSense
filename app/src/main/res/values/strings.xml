@@ -8,31 +8,14 @@
     <string name="launcher_label">tSense</string>
     <string name="recording">Please wait...</string>
     <string name="yes">Yes</string>
+    <string name="back">Back</string>
     <string name="no">No</string>
     <string name="settings">Settings</string>
     <string name="title_activity_custrec_setup">Custom Test</string>
+    <string name="title_activity_info">About</string>
 
     <!--Home screen -->
     <string name="title_activity_profile_setup">Profile</string>
     <string name="title_activity_fullrec_setup">Full Test</string>
     <string name="welcome">Welcome to TremorSense. To begin, please select an option below.</string>
-
-    <!--Profile setup-->
-    <string name="profile_setup_intro">Here, you can view past results for full and custom tests, as well as view statistics about your overall use of TremorSense</string>
-    <string name="pastdata">Past Data</string>
-    <string name="statistics">Statistics</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_info">About Tremor</string>
-
-    <!-- Full Recording Setup -->
-    <string name="fullrec_intro">This screen allows you to perform a full tremor test, using both left and right hands and in three different positions: \n &#8226; The device on top of your hand, extend in front of you (postural and intention tremor). \n &#8226; The device on top of your hand, resting on your lap (resting tremor). \n &#8226; Holding the device by your side. \n The app will tell you which position to use as you progress through the test. It should take about 3 minutes to complete. You may want to take a note describing whether you're hungry, tired, have had caffeine, or are anxious.</string>
-    <string name="add_note">Notes:</string>
-    <string name="go">Go!</string>
-
-    <!--Custom Recording Setup-->
-    <string name="to_perform">Tests to perform:</string>
-    <string name="on_top">On top of hand</string>
-    <string name="under">Under hand</string>
-    <string name="on_lap">Hand on lap</string>
 </resources>

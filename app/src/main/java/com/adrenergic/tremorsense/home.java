@@ -20,12 +20,6 @@ public class home extends Activity {
         startActivity(intent);
     }
 
-    /**Called when user clicks "Profile" button */
-    public void startProfileActivity(View view){
-        Intent intent = new Intent(this, profileSetup.class);
-        startActivity(intent);
-    }
-
     /**Called when user clicks "Settings" button */
     public void startSettingsActivity(View view){
         Intent intent = new Intent(this, SettingsActivity.class);
@@ -35,16 +29,6 @@ public class home extends Activity {
     /**Called when user clicks "Info" button */
     public void startInfoActivity(View view){
         Intent intent = new Intent(this, info.class);
-        startActivity(intent);
-    }
-
-    public void startFullActivity(View view){
-        Intent intent = new Intent(this, fullrecSetup.class);
-        startActivity(intent);
-    }
-
-    public void startCustomActivity(View view){
-        Intent intent = new Intent(this, custrecSetup.class);
         startActivity(intent);
     }
 }

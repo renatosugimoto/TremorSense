@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class RecordAccelData extends Activity implements SensorEventListener {
@@ -64,6 +65,13 @@ public class RecordAccelData extends Activity implements SensorEventListener {
 
     protected void onPause() {
         super.onPause();
+        if(senSensorManager!=null) {
+            senSensorManager.unregisterListener(this);
+        }
+    }
+
+    protected void onStop(){
+        super.onStop();
         if(senSensorManager!=null) {
             senSensorManager.unregisterListener(this);
         }
@@ -125,8 +133,12 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         }
         double SD;
         SD = Math.sqrt(sumXu2/(recArray.length-1));
+        //The following scales SD to a modified arctan BECAUSE SCIENCE
+        double tremorVal;
+        tremorVal = Math.round((0.7 * Math.atan(0.05 * SD)) * 100);
+        //Set the number in the view
         final TextView accZText = (TextView) findViewById(R.id.accelText);
-        accZText.setText(Math.round(SD*10) + "");
+        accZText.setText(tremorVal + "");
         accZText.setTextSize(80);
 
         /* ALTERNATE CALCULATION
@@ -149,5 +161,12 @@ public class RecordAccelData extends Activity implements SensorEventListener {
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
         //Accuracy change content goes here
+    }
+
+    public void goBack(View view){
+        if(senSensorManager!=null) {
+            senSensorManager.unregisterListener(this);
+        }
+        finish();
     }
 }

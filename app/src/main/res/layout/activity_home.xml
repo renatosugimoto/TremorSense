@@ -53,7 +53,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to TremorSense. To get started, please select an option below."
+            android:text="@string/welcome"
             android:layout_margin="20dp"/>
 
         <View
@@ -66,7 +66,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:orientation="horizontal"
@@ -86,66 +86,21 @@
                 android:adjustViewBounds="true"
                 android:onClick="startAccelActivity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="160dp"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_record_accel_data"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.33"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:src="@drawable/ic_fullrec"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:onClick="startFullActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="?android:attr/buttonBarButtonStyle" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_activity_fullrec_setup"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.33"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:src="@drawable/ic_custrec"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:onClick="startCustomActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="?android:attr/buttonBarButtonStyle" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_activity_custrec_setup"
+                android:textSize="@dimen/abc_text_size_large_material"
                 android:layout_gravity="center"/>
         </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
         style="?android:attr/buttonBarStyle"
         android:paddingLeft="10dp"
@@ -154,30 +109,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.33"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:src="@drawable/ic_profile"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:onClick="startProfileActivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="?android:attr/buttonBarButtonStyle" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title_activity_profile_setup"
-                android:layout_gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="0.33"
+            android:layout_weight="0.5"
             android:layout_height="fill_parent"
             android:orientation="vertical">
 
@@ -188,19 +120,20 @@
                 android:adjustViewBounds="true"
                 android:onClick="startInfoActivity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_info"
+                android:textSize="@dimen/abc_text_size_large_material"
                 android:layout_gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.33"
+            android:layout_weight="0.5"
             android:layout_height="fill_parent"
             android:orientation="vertical">
 
@@ -211,14 +144,15 @@
                 android:adjustViewBounds="true"
                 android:onClick="startSettingsActivity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_settings"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:textSize="@dimen/abc_text_size_large_material" />
         </LinearLayout>
         </LinearLayout>
     </LinearLayout>

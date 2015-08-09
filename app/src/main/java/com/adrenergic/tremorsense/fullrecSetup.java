@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ViewFlipper;
 
 
 public class fullrecSetup extends ActionBarActivity {
@@ -12,23 +15,19 @@ public class fullrecSetup extends ActionBarActivity {
     private int mood;
     private int hunger;
     private boolean hasCaffeine;
+    private ViewFlipper viewFlipper;
+
+    public void showNextView(View view){
+        viewFlipper.showNext();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullrec_setup);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_fullrec_setup, menu);
-        return true;
-    }
-
-    public void startRecording(){
-        //TODO: Implement full test system
+        viewFlipper = (ViewFlipper) findViewById(R.id.setuppageview);
+        viewFlipper.setInAnimation(this, R.anim.abc_grow_fade_in_from_bottom);
+        viewFlipper.setOutAnimation(this, R.anim.abc_shrink_fade_out_from_bottom);
     }
 
     @Override

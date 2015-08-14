@@ -135,10 +135,10 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         SD = Math.sqrt(sumXu2/(recArray.length-1));
         //The following scales SD to a modified arctan BECAUSE SCIENCE
         double tremorVal;
-        tremorVal = Math.round((0.7 * Math.atan(0.05 * SD)) * 100);
+        tremorVal = (7 * Math.atan(0.05 * SD)) * 100;
         //Set the number in the view
         final TextView accZText = (TextView) findViewById(R.id.accelText);
-        accZText.setText(tremorVal + "");
+        accZText.setText(Math.round(tremorVal) + "");
         accZText.setTextSize(80);
 
         /* ALTERNATE CALCULATION

@@ -45,24 +45,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="100dp"
         android:paddingTop="10dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:layout_margin="20dp"/>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#FFAAAAAA"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,7 +78,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_activity_record_accel_data"
+                android:text="@string/measure_tremor"
                 android:textSize="@dimen/abc_text_size_large_material"
                 android:layout_gravity="center"/>
         </LinearLayout>
@@ -100,7 +86,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:orientation="horizontal"
         style="?android:attr/buttonBarStyle"
         android:paddingLeft="10dp"

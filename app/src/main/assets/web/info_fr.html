@@ -1,0 +1,99 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>À propos de las application</title>
+    <style>
+      body, html {
+        font-family: sans-serif;
+      }
+      ul, p {
+        line-height: 1.5em;
+      }
+      a {
+        color: #444;
+        text-decoration: none;
+      }
+      .navbox{
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #CCC;
+        border: 1px solid #555;
+        border-radius: 3px;
+      }
+      .languagebar{
+        width:100%;
+        margin: 0 auto;
+        font-size: 10px;
+        color: #555;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top" class="languagebar">
+      <a href="info_en.html">English</a> | Français | <a href="info_de.html">Deutsch</a> | <a href="info_ru.html">Pу́сский</a> | <a href="info_zh.html">简体中文</a>
+    </div>
+    <h1>À propos</h1>
+      <div class="navbox">
+        <b>Sommaire:</b><br>
+        <a href="#howto">Comment utiliser TremorSense</a><br>
+        <a href="#interpretation">Interprétation des résultats</a><br>
+        <a href=#what>Quel est le tremblement?</a><br>
+        <a href=#causes>Qu'est-ce qui causer les tremblements</a><br>
+        <a href="#types">Variétés de tremblements</a><br>
+        <a href="#treatment">Traitement</a><br>
+        <a href="#about">À propos de TremorSense</a><br>
+        <a href="#how">Comment fonctionne TremorSense?</a><br>
+        <a href="#developer">À propos le développeur</a><br>
+      </div>
+    <h2 id="howto">Comment utiliser TremorSense</h2>
+      <p>TremorSense min (la version actuelle disponible pour le téléchargement) a été conçu pour être simple mais fonctionnel. Suivez ces étapes pour de meilleurs résultats:</p>
+      <ul>
+        <li>Assurer vous-êtes dans un environnement stable. Par exemple, si vous êtes sur un bus,  every bump will be interpreted as part of your tremor, and this will skew the results. Sit down at a desk in a stationary position before using TremorSense.</li>
+        <li>Extend your arm in front of you, with your palms pointing towards the ground. Place the device on top of your extended hand and tap the measure button.</li>
+        <li>Try to keep the screen of the device pointed vertically throughout the test, as rotational movement will skew results.</li>
+        <li>The test should take less than 10 seconds to complete. During this time, the circular graph will give you a realtime readout of your tremor</li>
+        <li>The test is complete when a number appears in the center of the red graph. This number is an abstract measurement of tremor severity.</li>
+      </ul>
+      <p><b>Do not attempt to balance the device on your hand if you think it will fall off.</b> Instead, try an alternate posture. Any of the following are fine:</p>
+      <ul>
+        <li>Affix the device to your wrist with a strap, and use the standard posture.</li>
+        <li>Arms outstretched, palm facing downwards. Grasp the phone in your hand with the screen pointing upwards. Wait for 15-20 seconds for the test to complete.</li>
+        <li>For Parkinsonian tremor, place the hand on your thigh</li>
+        <li>Any other position where the hand is unsupported and the screen of the device is pointed upwards.</li>
+      </ul>
+      <p>The key is to take measurements using the same position every time. It is of little significance what this position actually is. Remember, TremorSense is a tool for determining </p>
+      <h3>What if I can't get in the right position in time?</h3>
+        <p>From the main screen, tap the settings icon (the gear) and select "Countdown Timer Length". This will enable you to change the amount of time you have to prepare to up to ten seconds.</p>
+    <h2 id="interpretation">Interprétation des résultats</h2>
+      <p>Le nombre given when the recording is finished is an abstract indicator of tremor severity. Due to factors such as device accelerometer accuracy and tremor frequency, it is difficult to accurately compare results across subjects. This means that even though <b>someone else has a higher score than you, it doesn't necessarily mean that their tremor is more functionally severe</b>. TremorSense is best used to measure personal variations in tremor severity. In other words, what makes your tremor worse? what makes it better? Is it stable or worsening over the long term?</p>
+      <p>In general, tremor severity can be classified as follows:</p>
+      <ul>
+        <li><b>0 - 5: No significant tremor</b>.</li>
+        <li><b>6 - 15: Mild tremor</b>. Some difficulty performing fine motor tasks.</li>
+        <li><b>16 - 30: Moderate tremor</b>. High degree of difficulty performing fine motor tasks.</li>
+        <li><b>26 - 50: Severe tremor</b>. Fine motor tasks virtually impossible, some tasks very difficult.</li>
+        <li><b>51 - 100: Very severe tremor</b>. Substantial difficulty with everyday tasks.</li>
+        <li><b>101+: Extreme tremor</b>. Highest level of clinical severity, with difficulty performing any function with affected body parts.</li>
+      </ul>
+      <p><small><i>Values generated by TremorSense are not reflective of a diagnosis and should not be used in a diagnostic setting. This app is for personal use <b>only</b>.</i></small></p>
+    <h2 id="what">Quel est le tremblement?</h2>
+      <p>Les tremblements sont des mouvements anormaux involontaires, rythmiques et oscillatoires, de faible amplitude.</p>
+    <h2 id="causes">Qu'est-ce qui causer les tremblements?</h2>
+      <p>Tremor can be caused by a number of vastly different conditions. First of all, mild tremor</p>
+    <h2 id="types">Types of Tremor</h2>
+    <ul>
+      <li></li>
+    </ul>
+    <h2 id="treatment">Tremor Treatment</h2>
+    <p></p>
+    <h2 id="about">What is TremorSense?</h2>
+    <p>Amazingly, despite the widespread nature of tremor-inducing conditions, there are no simple solutions</p>
+    <h2 id="how">How does TremorSense work?</h2>
+    <p>TremorSense utilises the accelerometer in your device to detect even the slightest movement of the hand. In a nutshell, TremorSense takes 1000 readings from the accelerometer, calculates the standard deviation of these values, and scales the result according to a modified arctangent plot. This gives a number roughly between 0 and 100 which corresponds to tremor severity.</p>
+    <h2 id="developer">About the Developer</h2>
+    <p>TremorSense was developed by a one-man team, with the intention of creating an app for personal tremor monitoring under various circumstances. He has the vision of maintaining an ad-free, payless experience for all users. His email address is <a href="mailto:notanavocado@gmail.com">notanavocado@gmail.com</a>, if you'd like to drop him a message.</p>
+  </body>
+</html>

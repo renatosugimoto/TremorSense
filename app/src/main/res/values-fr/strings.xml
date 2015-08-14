@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TremorSense</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="app_name_short">TremorSense</string>
+    <string name="back">Reculer</string>
+    <string name="launcher_label">tSense</string>
+    <string name="no">Non</string>
+    <string name="pref_title_countdown"> La longueur du compte à rebours</string>
+    <string name="recording">Attendez...</string>
+    <string name="settings">Paramètres</string>
+    <string name="title_activity_info">Sur</string>
+    <string name="title_activity_record_accel_data"></string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="yes">Oui</string>
+    <string name="measure_tremor">Capteur de tremblement </string>
+    <string name="title_activity_home">tSense</string>
+    <string name="welcome">Bienvenue!</string>
+</resources>

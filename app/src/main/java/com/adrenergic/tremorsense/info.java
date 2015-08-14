@@ -19,6 +19,6 @@ public class info extends ActionBarActivity {
         WebView infoWebView = (WebView) findViewById(R.id.infoView);
         WebSettings webSettings = infoWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        infoWebView.loadUrl("file:///android_asset/web/info.html");
+        infoWebView.loadUrl("file:///android_asset/web/info_en.html");
     }
 }

@@ -1,5 +1,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.adrenergic.tremorsense.home">
 
@@ -12,7 +13,7 @@
         android:layout_width="256dp"
         android:layout_height="303dp"
         android:layout_gravity="left|bottom"
-        android:src="@mipmap/bg_ts"
+        android:src="@drawable/bg_ts"
         android:alpha="0.1"
         android:adjustViewBounds="false"
         android:longClickable="false" />
@@ -27,7 +28,7 @@
             android:layout_height="80sp"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
-            android:src="@mipmap/ts_logo"/>
+            android:src="@drawable/ts_logo"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,57 +37,59 @@
             android:id="@+id/homeTitleString"
             android:textColor="#ff444444"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="22sp"
             android:textIsSelectable="false"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="100dp"
         android:paddingTop="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_weight="8"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:orientation="horizontal"
             style="?android:attr/buttonBarStyle"
-            android:layout_marginBottom="20dp" >
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="0.33"
-            android:layout_height="fill_parent"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageButton
-                android:src="@drawable/ic_quickrec"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:onClick="startAccelActivity"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                style="?android:attr/buttonBarButtonStyle" />
+                <ImageButton
+                    android:src="@drawable/ic_quickrec"
+                    android:padding="3dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:onClick="startAccelActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    style="?android:attr/buttonBarButtonStyle" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/measure_tremor"
-                android:textSize="@dimen/abc_text_size_large_material"
-                android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/measure_tremor"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
         </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:orientation="horizontal"
         style="?android:attr/buttonBarStyle"
         android:paddingLeft="10dp"
@@ -113,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_info"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:textSize="20sp"
                 android:layout_gravity="center"/>
         </LinearLayout>
 
@@ -138,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_settings"
                 android:layout_gravity="center"
-                android:textSize="@dimen/abc_text_size_large_material" />
+                android:textSize="20sp" />
         </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -4,9 +4,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 
-/**
- * Created by Jackson on 15/07/2015.
- */
 public class DrawHelper {
     private Paint paint;
     private Path path;
@@ -23,7 +20,7 @@ public class DrawHelper {
     }
 
     public void addPoint(float x, float y, boolean reset){
-        if(reset==true){
+        if(reset){
             path.reset();
             path.moveTo(x, y);
         } else {

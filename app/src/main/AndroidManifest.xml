@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adrenergic.tremorsense" >
-    <uses-sdk android:minSdkVersion="11" />
-    <supports-screens android:smallScreens="true"
-        android:normalScreens="true"
+
+    <supports-screens
         android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
         android:xlargeScreens="false" />
 
     <application
@@ -13,10 +14,12 @@
         android:label="@string/launcher_label"
         android:screenOrientation="portrait"
         android:theme="@style/AppTheme" >
+
         <activity
             android:name=".home"
             android:label="@string/title_activity_home"
-            android:screenOrientation="portrait">
+            android:theme="@style/AppThemeNoBar"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,23 +28,25 @@
         </activity>
         <activity
             android:name=".RecordAccelData"
+            android:label="@string/title_activity_record_accel_data"
             android:screenOrientation="portrait"
-            android:label="@string/title_activity_record_accel_data" >
+            android:theme="@style/AppThemeNoBar" >
         </activity>
         <activity
-            android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"
+            android:name=".info"
+            android:label="@string/title_activity_info"
+            android:parentActivityName=".home"
             android:screenOrientation="portrait"
-            android:parentActivityName=".home" >
+            android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.adrenergic.tremorsense.home" />
         </activity>
         <activity
-            android:name=".info"
-            android:label="@string/title_activity_info"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".home" >
+            android:name=".settings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".home"
+            android:theme="@style/AppTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.adrenergic.tremorsense.home" />

@@ -3,12 +3,7 @@ package com.adrenergic.tremorsense;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-
-/**
- * Created by Jackson on 15/07/2015.
- */
 
 public class circleGraph extends View {
     DrawHelper helperShape;

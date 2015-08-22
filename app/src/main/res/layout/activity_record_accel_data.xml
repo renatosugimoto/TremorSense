@@ -11,7 +11,7 @@
         android:layout_width="283dp"
         android:layout_height="418dp"
         android:layout_gravity="left|bottom"
-        android:src="@mipmap/bg_thand"
+        android:src="@drawable/bg_thand"
         android:alpha="0.1"
         android:adjustViewBounds="false"
         android:longClickable="false" />
@@ -24,10 +24,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_activity_record_accel_data"
-            android:textSize="@dimen/abc_text_size_headline_material"
+            android:text="@string/record_progress"
+            android:id="@+id/rec_progress_text"
+            android:textSize="20sp"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
             android:gravity="center_horizontal" />
 
         <RelativeLayout
@@ -47,15 +47,16 @@
                 android:id="@+id/accelText"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:textSize="20sp"
                 android:textIsSelectable="true" />
             <Button
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_marginBottom="16dp"
+                android:layout_height="50dp"
                 android:text="@string/back"
-                android:textSize="@dimen/abc_text_size_large_material"
+                android:textColor="#FFFFFF"
                 android:onClick="goBack"/>
         </RelativeLayout>
     </LinearLayout>

@@ -2,9 +2,6 @@
 
 <ListPreference
     android:key="record_countdown_length"
-    android:title="@string/pref_title_countdown"
-    android:defaultValue="3000"
-    android:entries="@array/pref_countdown_list_titles"
-    android:entryValues="@array/pref_countdown_list_values" />
+    android:defaultValue="3000" />
 
 </PreferenceScreen>

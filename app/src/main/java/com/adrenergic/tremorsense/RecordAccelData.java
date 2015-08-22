@@ -10,7 +10,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,15 +18,10 @@ public class RecordAccelData extends Activity implements SensorEventListener {
     private SensorManager senSensorManager;
     private Sensor senAccelerometer;
     float accelZ = 0;
-    long startTime = System.currentTimeMillis();
-    long time = System.currentTimeMillis();
-    long[] timeArray = new long[1000];
     double[] recArray = new double[1000];
-    double[] dXArray = new double[1000];
     int recCount = 0;
     circleGraph progressCircle;
-    int bmpWidth = 480;
-    int bmpHeight = 480;
+    int bmpSize = 480;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +29,11 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_accel_data);
         //Check timer length
-        int timerLength = 3000;
+        int timerLength;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         timerLength = Integer.parseInt(prefs.getString("record_countdown_length", "3000"));
         //Circle graph initiation
+        bmpSize = this.getResources().getDisplayMetrics().widthPixels;
         progressCircle = (circleGraph) findViewById(R.id.progressgraph);
         new CountDownTimer(timerLength, 100) {
             public void onTick(long millisUntilFinished){
@@ -90,13 +85,11 @@ public class RecordAccelData extends Activity implements SensorEventListener {
             //check that it's coming from the accelo
             Sensor mySensor = event.sensor;
             if (mySensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-                time = System.currentTimeMillis();
                 accelZ = event.values[2];
-                timeArray[recCount] = time - startTime;
                 recArray[recCount] = accelZ;
-                double r = bmpWidth/2*0.8*((recArray[recCount]+20)/40);
-                double newX = (bmpWidth/2) + r*Math.cos((2*Math.PI*recCount/1000)-Math.PI/2);
-                double newY = (bmpHeight/2) + r*Math.sin((2*Math.PI*recCount/1000)-Math.PI/2);
+                double r = bmpSize/2*0.8*((recArray[recCount]+20)/40);
+                double newX = (bmpSize/2) + r*Math.cos((2*Math.PI*recCount/1000)-Math.PI/2);
+                double newY = (bmpSize/2) + r*Math.sin((2*Math.PI*recCount/1000)-Math.PI/2);
                 boolean newPath=true;
                 if(recCount!=0) {
                     newPath = false;
@@ -120,42 +113,27 @@ public class RecordAccelData extends Activity implements SensorEventListener {
         double sumZ;
         double meanZ;
         sumZ = 0;
-        for (int r = 0; r < recArray.length; r++) {
-            sumZ = sumZ + recArray[r];
+        for (double aRecArray : recArray) {
+            sumZ = sumZ + aRecArray;
         }
         meanZ = sumZ/recArray.length;
 
         //Calculating standard deviation
         double sumXu2; //this represents E((x-xbar)^2)
         sumXu2 = 0;
-        for (int x = 0; x < recArray.length; x++) {
-            sumXu2 += ((recArray[x]-meanZ)*(recArray[x]-meanZ));
+        for (double aRecArray : recArray) {
+            sumXu2 += ((aRecArray - meanZ) * (aRecArray - meanZ));
         }
         double SD;
         SD = Math.sqrt(sumXu2/(recArray.length-1));
-        //The following scales SD to a modified arctan BECAUSE SCIENCE
-        double tremorVal;
-        tremorVal = (7 * Math.atan(0.05 * SD)) * 100;
+        double tremorVal = SD*10;
         //Set the number in the view
         final TextView accZText = (TextView) findViewById(R.id.accelText);
         accZText.setText(Math.round(tremorVal) + "");
         accZText.setTextSize(80);
-
-        /* ALTERNATE CALCULATION
-        double[] dXArray = new double[999];
-        double lastVal = recArray[0];
-        double sumdX = 0;
-        for(int r=1;r<recArray.length;r++){
-            dXArray[r-1]=Math.abs(lastVal-recArray[r]);
-            lastVal = recArray[r];
-            sumdX += dXArray[r-1];
-        }
-        double tremorVal = sumdX/dXArray.length;
-        final TextView accZText = (TextView) findViewById(R.id.accelText);
-        accZText.setText(Math.round(sumdX) + "");
-        accZText.setTextSize(80);
-        Log.d("tremor",Double.toString(tremorVal));
-        */
+        //Set the top bar to "done".
+        final TextView topText = (TextView) findViewById (R.id.rec_progress_text);
+        topText.setText(getResources().getString(R.string.record_done));
     }
 
     @Override

@@ -22,7 +22,7 @@ public class home extends Activity {
 
     /**Called when user clicks "Settings" button */
     public void startSettingsActivity(View view){
-        Intent intent = new Intent(this, SettingsActivity.class);
+        Intent intent = new Intent(this, settings.class);
         startActivity(intent);
     }
 
